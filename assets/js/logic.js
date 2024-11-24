@@ -5,7 +5,7 @@ const asideEl = document.querySelector("aside");
 let mode = localStorage.getItem("mode") || "light";
 asideEl.setAttribute("class", mode);
 
-toggleMode.checked = true; // (mode === "dark");
+toggleMode.checked = (mode === "dark");
 
 toggleMode.addEventListener("click", function () {
   if (mode === "light") {
