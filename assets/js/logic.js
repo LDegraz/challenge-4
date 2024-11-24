@@ -10,11 +10,13 @@ toggleMode.checked = (mode === "dark");
 toggleMode.addEventListener("click", function () {
   if (mode === "light") {
     mode = "dark";
-    toggleButton.textContent = '🌞';
+    toggleMode.textContent = '🌞';
+    //switched from toggleButton to toggleMode
     asideEl.setAttribute("class", "dark");
   } else {
     mode = "light";
-    toggleButton.textContent = '🌛';
+    toggleMode.textContent = '🌛';
+    //switched from toggleButton to toggleMode
     asideEl.setAttribute("class", "light");
   }
   localStorage.setItem("mode", mode);
