@@ -9,8 +9,8 @@ const handleFormSubmit = function (event) {
   var content = document.querySelector("#content").value.trim();
 
   if (!username || !title || !content) {
-    var error = document.querySelector("#error-message");
-    error.textContent = "You are missing a required field!";
+    var error = document.querySelector("#error");
+    error.textContent = "Please complete the form.";
     return;
   }
 
@@ -18,6 +18,7 @@ const handleFormSubmit = function (event) {
     username: username,
     title: title,
     content: content,
+    date: new Date().toISOString(),
   };
 
   localStorage.setItem("formData", JSON.stringify(formData));
