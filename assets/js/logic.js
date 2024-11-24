@@ -2,7 +2,10 @@
 const toggleMode = document.querySelector("#toggle");
 const asideEl = document.querySelector("aside");
 
-let mode = "light";
+let mode = localStorage.getItem("mode") || "light";
+asideEl.setAttribute("class", mode);
+
+toggleMode.checked = (mode === "dark");
 
 toggleMode.addEventListener("click", function () {
   if (mode === "light") {
@@ -12,9 +15,9 @@ toggleMode.addEventListener("click", function () {
     mode = "light";
     asideEl.setAttribute("class", "light");
   }
+  localStorage.setItem("mode", mode);
+  toggleMode.checked = (mode === "dark");
 });
-// Save the mode to local storage
-localStorage.setItem("mode", mode);
 
 // TODO: Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
 const readLocalStorage = function () {

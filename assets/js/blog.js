@@ -46,8 +46,6 @@ const redirectPage = function (url) {
   redirectURL = url;
   location.assign(url);
 };
-
-// Add event listener to the back button
-backBtn.addEventListener("click", function() {
-  redirectPage("index.html");
-});
+document.getElementById("back").addEventListener("click", function () {
+    redirectPage("index.html");
+    });
