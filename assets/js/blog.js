@@ -40,13 +40,6 @@ const renderBlogList = function () {
 // TODO: Call the `renderBlogList` function
 renderBlogList();
 
-// TODO: Redirect to the home page using the `redirectPage` function found in logic.js when the back button is clicked
-//let redirectURL = '';
-
-//const redirectPage = function (url) {
-  //redirectURL = url;
-  //location.assign(url);
-//};
 document.getElementById("back").addEventListener("click", function () {
     redirectPage("index.html");
     });
