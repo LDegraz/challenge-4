@@ -18,7 +18,7 @@ const handleFormSubmit = function (event) {
     username: username,
     title: title,
     content: content,
-    date: new Date().toISOString(),
+    //date: new Date().toISOString(),
   };
 
   function redirectPage(url) {
@@ -31,4 +31,5 @@ const handleFormSubmit = function (event) {
 }
 
 // TODO: Add an event listener to the form on submit. Call the function to handle the form submission.
+
 formEl.addEventListener("submit", handleFormSubmit);

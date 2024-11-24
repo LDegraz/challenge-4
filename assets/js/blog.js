@@ -24,6 +24,7 @@ const renderBlogList = function () {
         const h2El = document.createElement("h2");
         const pEl = document.createElement("p");
         const dateEl = document.createElement("p");
+        console.log(post);
     
         h2El.textContent = post.title;
         pEl.textContent = post.content;
@@ -40,12 +41,12 @@ const renderBlogList = function () {
 renderBlogList();
 
 // TODO: Redirect to the home page using the `redirectPage` function found in logic.js when the back button is clicked
-let redirectURL = '';
+//let redirectURL = '';
 
-const redirectPage = function (url) {
-  redirectURL = url;
-  location.assign(url);
-};
+//const redirectPage = function (url) {
+  //redirectURL = url;
+  //location.assign(url);
+//};
 document.getElementById("back").addEventListener("click", function () {
     redirectPage("index.html");
     });
