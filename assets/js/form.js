@@ -18,7 +18,6 @@ const handleFormSubmit = function (event) {
     username: username,
     title: title,
     content: content,
-    //date: new Date().toISOString(),
   };
 
   function redirectPage(url) {
@@ -27,7 +26,6 @@ const handleFormSubmit = function (event) {
 
   localStorage.setItem("formData", JSON.stringify(formData));
   redirectPage("blog.html");
-  //window.location.href = "/blog.html";
 }
 
 // TODO: Add an event listener to the form on submit. Call the function to handle the form submission.
