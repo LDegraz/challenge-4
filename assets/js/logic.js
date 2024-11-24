@@ -5,7 +5,7 @@ const asideEl = document.querySelector("aside");
 let mode = localStorage.getItem("mode") || "light";
 asideEl.setAttribute("class", mode);
 
-toggleMode.checked = (mode === "dark");
+toggleMode.checked = true; // (mode === "dark");
 
 toggleMode.addEventListener("click", function () {
   if (mode === "light") {
@@ -23,7 +23,7 @@ toggleMode.addEventListener("click", function () {
 
 // TODO: Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
 const readLocalStorage = function () {
-  return JSON.parse(localStorage.getItem("formData")) || [];
+  return JSON.parse(localStorage.getItem("blogData")) || [];
 };
 
 
@@ -31,7 +31,8 @@ const readLocalStorage = function () {
 const storeLocalStorage = function (data) {
   const blogData = readLocalStorage();
   blogData.push(data);
-  localStorage.setItem("formData", JSON.stringify(blogData));
+  console.log(blogData);
+  localStorage.setItem("blogData", JSON.stringify(blogData));
 };
 
 // ! Use the following function whenever you need to redirect to a different page
