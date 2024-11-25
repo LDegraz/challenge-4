@@ -8,8 +8,6 @@ let mode = localStorage.getItem("mode") || "light";
 document.body.setAttribute("class", mode);
 toggleMode.textContent = (mode === "dark") ? '🌞' : '🌛';
 
-//toggleMode.checked = (mode === "dark");
-
 toggleMode.addEventListener("click", function () {
   if (mode === "light") {
     mode = "dark";
@@ -24,7 +22,6 @@ toggleMode.addEventListener("click", function () {
   }
 
   localStorage.setItem("mode", mode);
-  //toggleMode.checked = (mode === "dark");
 });
 
 // TODO: Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
