@@ -1,10 +1,7 @@
 // TODO: Create logic to toggle the light/dark mode styles for the page and circle. The mode should be saved to local storage.
 const toggleMode = document.querySelector("#toggle");
 const asideEl = document.querySelector("aside");
-
-
 const root = document.documentElement;
-root.style.setProperty("--circle-color", "#563D7C");
 
 let mode = localStorage.getItem("mode") || "light";
 
@@ -18,10 +15,12 @@ toggleMode.addEventListener("click", function () {
     mode = "dark";
     document.body.setAttribute("class", "dark");
     toggleMode.textContent = '🌞';
+    root.style.setProperty("--circle-color", "#563D7C");
   } else {
     mode = "light";
     document.body.setAttribute("class", "light");
     toggleMode.textContent = '🌛';
+    root.style.setProperty("--circle-color", "#08ff08");
   }
 
   localStorage.setItem("mode", mode);
