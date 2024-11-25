@@ -2,25 +2,30 @@
 const toggleMode = document.querySelector("#toggle");
 const asideEl = document.querySelector("aside");
 
-let mode = localStorage.getItem("mode") || "light";
-asideEl.setAttribute("class", mode);
 
-toggleMode.checked = (mode === "dark");
+const root = document.documentElement;
+root.style.setProperty("--circle-color", "#563D7C");
+
+let mode = localStorage.getItem("mode") || "light";
+
+document.body.setAttribute("class", mode);
+toggleMode.textContent = (mode === "dark") ? '🌞' : '🌛';
+
+//toggleMode.checked = (mode === "dark");
 
 toggleMode.addEventListener("click", function () {
   if (mode === "light") {
     mode = "dark";
+    document.body.setAttribute("class", "dark");
     toggleMode.textContent = '🌞';
-    //switched from toggleButton to toggleMode
-    asideEl.setAttribute("class", "dark");
   } else {
     mode = "light";
+    document.body.setAttribute("class", "light");
     toggleMode.textContent = '🌛';
-    //switched from toggleButton to toggleMode
-    asideEl.setAttribute("class", "light");
   }
+
   localStorage.setItem("mode", mode);
-  toggleMode.checked = (mode === "dark");
+  //toggleMode.checked = (mode === "dark");
 });
 
 // TODO: Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
